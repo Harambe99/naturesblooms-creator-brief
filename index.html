@@ -221,18 +221,8 @@ footer a{color:var(--mango)}
 .toggle{position:fixed;right:14px;bottom:14px;z-index:9;border:0;border-radius:99px;
  background:#43291C;color:var(--cream);font:700 11px/1 var(--ui);letter-spacing:.1em;
  text-transform:uppercase;padding:12px 15px;cursor:pointer;box-shadow:var(--sh)}
-@media(max-width:860px){
- .hero-in{grid-template-columns:1fr;gap:22px;text-align:left}
- .hero-stage{order:-1;min-height:0} .hero-stage img{max-height:320px;width:auto;max-width:100%;border-radius:10px}
- .logo{height:92px} .dt{grid-template-columns:1fr} .dstage{min-height:0;padding:16px}
- ".dstage img{max-height:210px} .calc{grid-template-columns:1fr} .two,.ssrow{grid-template-columns:1fr}
- .pick{grid-template-columns:1fr;gap:9px}
- .pcard{flex-direction:row;text-align:left;align-items:center;gap:14px;padding:11px}
- .plate{width:92px;height:92px;flex:none;border-radius:9px}
- .plate img{max-height:92px;max-width:92px}
- .pays{grid-template-columns:1fr}
+
 }
-@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 
 /* viral videos */
 .vids{display:grid;grid-template-columns:repeat(auto-fill,minmax(228px,1fr));gap:14px}
@@ -247,7 +237,6 @@ footer a{color:var(--mango)}
 .vid .handle{font-weight:800;font-size:16px;letter-spacing:-.01em}
 .vid .go{font:700 10.5px/1 var(--ui);letter-spacing:.14em;text-transform:uppercase;color:var(--mango);
  margin-top:auto;display:flex;align-items:center;gap:7px}
-@media(max-width:860px){.vids{grid-template-columns:1fr 1fr;gap:10px}.vid{padding:14px}}
 
 /* flash sales */
 .flash{background:#43291C;color:var(--cream);border-radius:var(--r);overflow:hidden}
@@ -272,8 +261,39 @@ footer a{color:var(--mango)}
 .fplay h5{font:800 12px/1 var(--ui);letter-spacing:.14em;text-transform:uppercase;color:var(--mango);
  margin:0 0 9px}
 .fplay p{margin:0;color:#D8C5B1;font-size:14.5px}
-@media(max-width:860px){.flashtop{grid-template-columns:1fr}.fgrid{grid-template-columns:1fr}}
-</style>
+
+/* responsive overrides — kept last so they always win on source order */
+@media(max-width:860px){
+ .hero-in{grid-template-columns:1fr;gap:20px;text-align:left}
+ .hero-stage{order:-1;min-height:0} .hero-stage img{max-height:240px}
+ .logo{height:clamp(84px,22vw,112px)}
+ .hero .kick{font-size:clamp(13px,3.6vw,16px);letter-spacing:.24em}
+ .hero h1{font-size:clamp(30px,8.6vw,42px)}
+ .offer{padding:12px 14px;gap:10px} .offer .n{font-size:19px}
+ .dt{grid-template-columns:1fr} .dstage{min-height:0} .dstage img{max-height:260px}
+ .calc{grid-template-columns:1fr}
+ .two,.ssrow,.pays{grid-template-columns:1fr}
+ .pick{grid-template-columns:1fr;gap:9px}
+ .pcard{flex-direction:row;text-align:left;align-items:center;gap:14px;padding:10px}
+ .plate{width:96px;height:96px;flex:none;border-radius:9px 0 0 9px}
+ .plate img{max-height:96px;max-width:96px;height:auto}
+ .vids{grid-template-columns:1fr 1fr;gap:10px} .vid{padding:14px;gap:9px}
+ .vid .handle{font-size:14px} .vid .tt{width:34px;height:34px}
+ .flashtop{grid-template-columns:1fr} .fgrid{grid-template-columns:1fr}
+ .fplay{grid-template-columns:1fr;gap:16px}
+ .buns{grid-template-columns:1fr}
+ .price .now{font-size:26px}
+ .claims span{font-size:12px;padding:8px 11px}
+ .nav{margin:0 -20px;padding:14px 20px 4px}
+ .filters{margin:0 -20px;padding:0 20px 14px}
+ .toggle{right:10px;bottom:10px;padding:10px 13px}
+ textarea{min-height:110px}
+}
+@media(max-width:400px){
+ .vids{grid-template-columns:1fr}
+ .hero h1{font-size:clamp(27px,9vw,34px)}
+}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}</style>
 </head>
 <body>
 <button class="toggle" id="tg" type="button">Dark</button>
@@ -331,17 +351,19 @@ footer a{color:var(--mango)}
 
 <section class="col" id="flash">
  <div class="sh"><p class="kick">Live flash sales</p><div class="rule"></div>
-  <h2>When we go live, we run it up</h2>
-  <p>Flash pricing only exists while a stream is running. It is a volume play — the job on a live is
-   to move units fast, not to protect the margin on any one of them.</p></div>
+  <h2>Want to go live? We'll run it up with you</h2>
+   <p>If you want to stream, tell us and we will switch flash pricing on for your live. It only runs
+    while you are on air, and it exists to move units fast — the job on a live is volume, not
+    protecting the margin on any single sale.</p></div>
  <div class="flash">
   <div class="flashtop">
    <div><h3>Price drops.<b>Volume climbs.</b></h3>
-    <p>Everything goes to flash pricing the moment the stream starts and snaps back the second the
-     timer ends. That urgency is the entire mechanic — call the timer, call the stock, and keep
-     resetting the room as new people come in.</p>
-    <div class="ftick"><span>Live only</span><span>Timer-driven</span><span>Bundles first</span>
-     <span>20% commission as always</span></div></div>
+    <p>Message your contact before you schedule a stream and we will set the flash prices live for
+     you. They switch on when you go on air and snap back the second the timer ends. That urgency is
+     the entire mechanic — call the timer, call the stock, and keep resetting the room as new people
+     come in.</p>
+    <div class="ftick"><span>Ask us to switch it on</span><span>Live only</span><span>Timer-driven</span>
+     <span>Bundles first</span><span>20% commission as always</span></div></div>
    <div class="fgrid">
     <div class="fcell"><div class="fn">Triple Bloom<br>Bundle</div><div class="fv">$46.99</div>
      <div class="fw">$68.99</div></div>
@@ -361,6 +383,9 @@ footer a{color:var(--mango)}
    <div><h5>Adding to cart is not checking out</h5>
     <p>Say it out loud, repeatedly. Carts do not hold the flash price — they have to check out before
      the timer ends or they pay full price.</p></div>
+   <div><h5>Getting set up</h5>
+    <p>Give your contact a day or two of notice with the date and rough time. We switch the pricing on
+     for your window, and you get the assets and a stock count before you go on.</p></div>
    <div><h5>Call the stock</h5>
     <p>If numbers are dropping, say the number. "We're down to eleven" does more than any script
      line you could write.</p></div>
