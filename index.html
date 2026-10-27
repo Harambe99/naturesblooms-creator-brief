@@ -33,9 +33,9 @@ html[data-theme=light]{--bg:#F7F1E4;--alt:#F1E8D6;--panel:#fff;--line:#E2D5BE;
  --ink:#2C150D;--mut:#6B5244;--faint:#9C8572;
  --sh:0 1px 2px rgba(44,21,13,.05),0 10px 30px -16px rgba(44,21,13,.3)}
 *{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%;overflow-x:hidden;overflow-x:clip}
+html{-webkit-text-size-adjust:100%;overflow-x:hidden;overscroll-behavior-x:none;width:100%}
 body{margin:0;background:var(--bg);color:var(--ink);font:500 16px/1.62 var(--ui);
- -webkit-font-smoothing:antialiased;overflow-x:hidden;overflow-x:clip}
+ -webkit-font-smoothing:antialiased;overflow-x:hidden;overscroll-behavior-x:none;width:100%;position:relative}
 .col{max-width:var(--col);margin:0 auto;padding:0 20px;position:relative}
 h1,h2,h3,h4{font-weight:800;letter-spacing:-.01em;margin:0;text-wrap:balance}
 .kick{font-weight:700;font-size:10px;letter-spacing:.34em;text-transform:uppercase;color:var(--mango)}
